@@ -49,9 +49,10 @@ order by abs(e1.salary-e2.salary) desc;
 
 */
 -- version1
+use hr;
 select
 	j.job_title as 직책,
-    max(e.first_name) as 최신입사자명,
+--     e.first_name as 최신입사자명,
     max(e.hire_date) as 최신입사일,
     if(max(year(e.hire_date))>=2007,"최근입사자","최근입사자아님") as 입사구분
     from employees e
